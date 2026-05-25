@@ -1,0 +1,1960 @@
+<script>
+  function scrollGallery(direction) {
+    const container = document.getElementById("galleryContainer");
+    const width = window.innerWidth;
+    let scrollAmount;
+    if (width < 640) {
+      scrollAmount = container.offsetWidth * 0.9;
+    } else if (width < 768) {
+      scrollAmount = 188;
+    } else {
+      scrollAmount = 240;
+    }
+    container.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+  }
+</script>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="csrf-token"
+      content="St6CYxPugL6CNjERtCFlaD31lsrkcrMRaJGIlxQM"
+    />
+
+    <script>
+      (function () {
+        const isCommunity = window.location.pathname.includes("/community");
+        const themeKey = isCommunity ? "community_theme" : "theme";
+        const savedTheme = localStorage.getItem(themeKey);
+
+        if (savedTheme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else if (savedTheme === "light") {
+          document.documentElement.classList.remove("dark");
+        } else {
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.classList.add("dark");
+          }
+        }
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Renz Timothy Gallenero",
+        "url": "https://renlenon.kodecraze.com/",
+        "image": "https://renlenon.kodecraze.com/images/renlenon-portfolio.jpg",
+        "jobTitle": "Software Engineer, WordPress, UI/UX Designer, SEO Specialist, Freelancer",
+        "description": "Renz Timothy Gallenero (Ren) is a Freelancer and Software Engineer based in San Juan City, specializing in Laravel, WordPress, and digital strategy.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Juan City",
+          "addressRegion": "Metro Manila",
+          "addressCountry": "PH"
+        },
+        "colloquialName": "Ren Lenon",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Polytechnic University of the Philippines"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/renielyn-lenon-237449376/",
+          "https://github.com/h0t4kizn"
+        ],
+        "knowsAbout": [
+          "Laravel",
+          "WordPress",
+          "UI/UX Design",
+          "SEO",
+          "Full-Stack Development",
+          "Gemini AI Integration",
+          "Software Engineering"
+        ]
+      }
+    </script>
+
+    <title>Renz Timothy Gallenero | Virtual Assistant</title>
+    <meta name="title" content="Renz Timothy Gallenero | Virtual Assistant" />
+    <meta
+      name="description"
+      content="Software Engineer and Student Freelancer based in San Juan City. Specializing in Laravel, WordPress development, UI/UX Design, and SEO strategy. Bridging technical precision with digital innovation."
+    />
+    <meta
+      name="keywords"
+      content="Renz Timothy Gallenero, Ren Lenon, Renz Timothy Gallenero San Juan City, Software Engineer Philippines, Student Freelancer San Juan, Ren Lenon Portfolio, Renz Timothy Gallenero Portfolio, Lenon, WordPress Renz Timothy Gallenero, SEO Specialist Philippines, UI/UX Designer San Juan"
+    />
+    <meta name="author" content="Renz Timothy Gallenero" />
+
+    <link rel="icon" type="image/png" href="assets/images/renz-portfolio.jpg" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/renz-portfolio.jpg"
+      type="image/png"
+    />
+    <link rel="apple-touch-icon" href="assets/images/renz-portfolio.jpg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta
+      property="og:title"
+      content="Renz Timothy Gallenero | Virtual Assistant"
+    />
+    <meta
+      property="og:description"
+      content="Software Engineer & WordPress Developer based in San Juan City. Bridging structural engineering logic with Laravel, AI systems, and digital strategy. Explore my portfolio and community hub featuring Gemini AI integration."
+    />
+    <meta property="og:image" content="" />
+    <meta property="og:image:secure_url" content="" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="" />
+    <meta
+      name="twitter:title"
+      content="Renz Timothy Gallenero | Virtual Assistant"
+    />
+    <meta
+      name="twitter:description"
+      content="Software Engineer & WordPress Developer based in San Juan City. Bridging structural engineering logic with Laravel, AI systems, and digital strategy. Explore my portfolio and community hub featuring Gemini AI integration."
+    />
+    <meta name="twitter:image" content="" />
+
+    <link rel="canonical" href="" />
+
+    <meta name="geo.region" content="PH-00" />
+    <meta name="geo.placename" content="San Juan City" />
+    <meta name="geo.position" content="14.6061;121.0315" />
+    <meta name="ICBM" content="14.6061, 121.0315" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://renlenon.kodecraze.com/assets/css/style.css"
+    />
+  </head>
+  <body
+    class="antialiased bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white min-h-screen flex flex-col"
+  >
+    <div id="signInModal" class="modal">
+      <div
+        class="signin-card w-[92%] max-w-md mx-auto bg-white dark:bg-gray-800 rounded-xl p-6 sm:p-8 relative"
+        onclick="event.stopPropagation()"
+      >
+        <button
+          type="button"
+          class="close-btn absolute top-4 right-4 z-[1010] p-2 text-2xl font-bold leading-none text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+          onclick="closeSignInModal()"
+        >
+          &times;
+        </button>
+
+        <h2
+          class="text-xl sm:text-2xl font-bold mb-6 text-black dark:text-white text-center"
+        >
+          Sign In
+        </h2>
+
+        <div
+          id="signin-error"
+          class="hidden error-message bg-red-100 text-red-600 p-3 rounded-lg mb-4 text-sm flex items-center"
+        >
+          <i class="fas fa-exclamation-circle mr-2 flex-shrink-0"></i>
+          <span id="signin-error-text"></span>
+        </div>
+
+        <form
+          id="signin-form"
+          action="https://renlenon.kodecraze.com/login"
+          method="POST"
+          autocomplete="on"
+        >
+          <input
+            type="hidden"
+            name="_token"
+            value="St6CYxPugL6CNjERtCFlaD31lsrkcrMRaJGIlxQM"
+            autocomplete="off"
+          />
+          <div class="mb-4 text-left">
+            <label class="text-sm font-medium text-black dark:text-white"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              name="email"
+              id="email"
+              autocomplete="email"
+              class="signin-input w-full"
+              required
+            />
+          </div>
+
+          <div class="mb-6 text-left">
+            <label class="text-sm font-medium text-black dark:text-white"
+              >Password</label
+            >
+            <div class="password-wrapper relative">
+              <input
+                type="password"
+                name="password"
+                id="signin-pass"
+                class="signin-input w-full pr-10"
+                autocomplete="current-password"
+                required
+              />
+              <i
+                class="fas fa-eye toggle-password absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-400"
+                onclick="togglePass()"
+              ></i>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            id="signin-submit-btn"
+            class="register-btn hover-lift w-full py-3 rounded-lg font-bold transition-all shadow-md hover:shadow-lg text-sm sm:text-base"
+          >
+            Sign In
+          </button>
+        </form>
+
+        <div class="mt-8 text-center text-sm">
+          <span class="modal-footer-text text-gray-600 dark:text-gray-400"
+            >Need an account?</span
+          >
+          <button
+            type="button"
+            onclick="
+              closeSignInModal();
+              openModal();
+            "
+            class="ml-1 modal-footer-link transition-colors font-bold"
+          >
+            Register here
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("signin-form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const btn = document.getElementById("signin-submit-btn");
+          const errorBox = document.getElementById("signin-error");
+          const errorText = document.getElementById("signin-error-text");
+          const csrfMeta = document.querySelector('meta[name="csrf-token"]');
+
+          btn.disabled = true;
+          btn.textContent = "Signing in...";
+          errorBox.classList.add("hidden");
+
+          try {
+            const formData = new FormData(this);
+
+            const response = await fetch(this.action, {
+              method: "POST",
+              body: formData,
+              credentials: "same-origin",
+              headers: {
+                "X-Requested-With": "XMLHttpRequest",
+                Accept: "application/json",
+                "X-CSRF-TOKEN": csrfMeta
+                  ? csrfMeta.getAttribute("content")
+                  : "",
+              },
+            });
+
+            if (response.status === 419) {
+              window.location.reload();
+              return;
+            }
+
+            if (response.redirected) {
+              window.location.replace(response.url);
+              return;
+            }
+
+            const data = await response.json();
+
+            if (data.status === "success") {
+              btn.textContent = "Redirecting...";
+              window.location.replace(data.redirect || "/community");
+              return;
+            }
+
+            errorText.textContent =
+              data.message || "Invalid email or password.";
+            errorBox.classList.remove("hidden");
+            btn.disabled = false;
+            btn.textContent = "Sign In";
+          } catch (err) {
+            console.error("Login error:", err);
+            errorText.textContent =
+              "Network error. Please check your connection.";
+            errorBox.classList.remove("hidden");
+            btn.disabled = false;
+            btn.textContent = "Sign In";
+          }
+        });
+    </script>
+    <div id="registerModal" class="modal">
+      <div
+        class="register-card w-[95%] max-w-xl mx-auto bg-white dark:bg-gray-800 rounded-xl p-5 sm:p-8 overflow-y-auto max-h-[95vh] relative"
+        onclick="event.stopPropagation()"
+      >
+        <button
+          type="button"
+          class="close-btn absolute top-4 right-4 z-[1010] p-2 text-2xl font-bold leading-none text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+          onclick="closeModal()"
+        >
+          &times;
+        </button>
+
+        <h2
+          class="text-xl sm:text-2xl font-bold mb-6 text-black dark:text-white text-center"
+        >
+          Join the Community
+        </h2>
+
+        <div
+          id="register-error"
+          class="hidden error-message bg-red-100 text-red-600 p-3 rounded-lg mb-4 text-sm flex items-center"
+        >
+          <i class="fas fa-exclamation-circle mr-2 flex-shrink-0"></i>
+          <span id="register-error-text"></span>
+        </div>
+
+        <form
+          id="register-form"
+          action="https://renlenon.kodecraze.com/register"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="_token"
+            value="St6CYxPugL6CNjERtCFlaD31lsrkcrMRaJGIlxQM"
+            autocomplete="off"
+          />
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div class="text-left">
+              <label class="text-sm font-medium text-black dark:text-white"
+                >First Name</label
+              >
+              <input
+                type="text"
+                name="first_name"
+                class="register-input w-full"
+                required
+              />
+            </div>
+            <div class="text-left">
+              <label class="text-sm font-medium text-black dark:text-white"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                name="last_name"
+                class="register-input w-full"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="mb-4 text-left">
+            <label class="text-sm font-medium text-black dark:text-white"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              name="email"
+              id="register-email"
+              class="register-input w-full"
+              required
+            />
+            <p
+              id="register-email-hint"
+              class="text-xs text-gray-600 dark:text-gray-400 mt-1"
+            >
+              This will be your sign-in email
+            </p>
+          </div>
+
+          <div class="mb-4 text-left">
+            <label class="text-sm font-medium text-black dark:text-white"
+              >Password</label
+            >
+            <div class="password-wrapper relative">
+              <input
+                type="password"
+                id="register-pass"
+                name="password"
+                class="register-input w-full pr-10"
+                minlength="6"
+                required
+              />
+              <i
+                class="fas fa-eye toggle-password-register absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
+                onclick="toggleRegisterPass()"
+              ></i>
+            </div>
+            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">
+              Must be at least 6 characters long
+            </p>
+          </div>
+
+          <div class="mb-4 text-left">
+            <label
+              class="text-sm font-medium text-black dark:text-white mb-2 block"
+              >I am a</label
+            >
+            <div class="grid grid-cols-2 gap-3">
+              <label
+                class="role-option flex items-center justify-center gap-2 p-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer transition-all"
+              >
+                <input
+                  type="radio"
+                  name="user_role"
+                  value="student"
+                  class="hidden"
+                  required
+                  onchange="updateInstitutionLabel('student')"
+                />
+                <i class="fas fa-graduation-cap text-sm role-icon"></i>
+                <span class="font-semibold text-xs sm:text-sm role-text"
+                  >Student</span
+                >
+              </label>
+              <label
+                class="role-option flex items-center justify-center gap-2 p-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer transition-all"
+              >
+                <input
+                  type="radio"
+                  name="user_role"
+                  value="professional"
+                  class="hidden"
+                  required
+                  onchange="updateInstitutionLabel('professional')"
+                />
+                <i class="fas fa-briefcase text-sm role-icon"></i>
+                <span class="font-semibold text-xs sm:text-sm role-text"
+                  >Professional</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-6 text-left">
+            <label
+              id="institution-label"
+              class="text-sm font-medium text-black dark:text-white"
+              >School/University (Optional)</label
+            >
+            <input
+              type="text"
+              id="institution-input"
+              name="institution"
+              class="register-input w-full"
+              placeholder="e.g., University of the Philippines"
+            />
+          </div>
+
+          <div class="flex flex-col-reverse sm:grid sm:grid-cols-2 gap-3">
+            <button
+              type="button"
+              onclick="closeModal()"
+              class="cancel-btn py-3 rounded-lg font-medium transition-all text-sm sm:text-base"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              id="register-submit-btn"
+              class="submit-btn hover-lift py-3 rounded-lg font-bold transition-all shadow-md text-sm sm:text-base"
+            >
+              Join Community
+            </button>
+          </div>
+        </form>
+
+        <div class="mt-6 text-center text-sm">
+          <span class="modal-footer-text">Already have an account?</span>
+          <button
+            type="button"
+            onclick="
+              closeModal();
+              openSignInModal();
+            "
+            class="ml-1 modal-footer-link transition-colors font-semibold"
+          >
+            Sign in here
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function updateInstitutionLabel(role) {
+        const label = document.getElementById("institution-label");
+        const input = document.getElementById("institution-input");
+        if (role === "professional") {
+          label.textContent = "Company (Optional)";
+          input.placeholder = "e.g., Google Inc.";
+        } else {
+          label.textContent = "School/University (Optional)";
+          input.placeholder = "e.g., University of the Philippines";
+        }
+      }
+
+      document
+        .getElementById("register-form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const btn = document.getElementById("register-submit-btn");
+          const errorBox = document.getElementById("register-error");
+          const errorText = document.getElementById("register-error-text");
+          const emailInput = document.getElementById("register-email");
+          const emailHint = document.getElementById("register-email-hint");
+          const csrfMeta = document.querySelector('meta[name="csrf-token"]');
+
+          btn.disabled = true;
+          btn.textContent = "Creating account...";
+          errorBox.classList.add("hidden");
+          emailInput.classList.remove("border-red-500");
+          if (emailHint) emailHint.classList.remove("text-red-500");
+
+          const formData = new FormData(this);
+
+          try {
+            const response = await fetch(this.action, {
+              method: "POST",
+              body: formData,
+              credentials: "same-origin",
+              headers: {
+                "X-Requested-With": "XMLHttpRequest",
+                Accept: "application/json",
+                "X-CSRF-TOKEN": csrfMeta
+                  ? csrfMeta.getAttribute("content")
+                  : "",
+              },
+            });
+
+            if (response.status === 419) {
+              window.location.reload();
+              return;
+            }
+
+            if (response.redirected) {
+              window.location.replace(response.url);
+              return;
+            }
+
+            const data = await response.json();
+
+            if (data.status === "success") {
+              btn.textContent = "Redirecting...";
+              window.location.replace(data.redirect || "/community");
+              return;
+            }
+
+            if (data.field === "email") {
+              emailInput.classList.add("border-red-500");
+            }
+            errorText.textContent =
+              data.message || "Something went wrong. Please try again.";
+            errorBox.classList.remove("hidden");
+            btn.disabled = false;
+            btn.textContent = "Join Community";
+          } catch (err) {
+            errorText.textContent = "Something went wrong. Please try again.";
+            errorBox.classList.remove("hidden");
+            btn.disabled = false;
+            btn.textContent = "Join Community";
+          }
+        });
+    </script>
+    <div
+      id="chat-widget"
+      class="fixed bottom-6 right-6 z-50 flex flex-col items-end font-sans"
+    >
+      <div
+        id="chat-window"
+        class="hidden w-80 md:w-96 bg-white dark:bg-gray-900 shadow-2xl rounded-2xl border border-gray-200 flex flex-col mb-4 overflow-hidden transition-all duration-300"
+      >
+        <div
+          class="bg-white dark:bg-gray-900 border-b border-gray-200 p-4 flex items-center justify-between"
+        >
+          <div class="flex items-center gap-3">
+            <div class="relative">
+              <img
+                src="assets/profile/renz-portfolio.jpg"
+                alt="Renz"
+                class="w-10 h-10 rounded-full border border-gray-200 object-cover"
+              />
+              <span
+                class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 dark:bg-green-400 border-2 border-white dark:border-gray-900 rounded-full animate-pulse"
+              ></span>
+            </div>
+            <div>
+              <h3 class="text-gray-900 dark:text-white font-bold text-sm">
+                Chat with Renz
+              </h3>
+              <p
+                class="text-gray-500 dark:text-gray-400 text-[10px] tracking-wider uppercase font-medium"
+              >
+                Online
+              </p>
+            </div>
+          </div>
+          <button
+            id="close-chat"
+            class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition"
+          >
+            <i class="fas fa-times text-lg"></i>
+          </button>
+        </div>
+
+        <div
+          id="chat-box"
+          class="h-80 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-950 flex flex-col scroll-smooth"
+        >
+          <div
+            class="self-start bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-3 rounded-2xl rounded-tl-none border border-gray-200 text-sm shadow-sm max-w-[85%]"
+          >
+            Hi there! 👋🏻 I’m Renz. Thanks for checking out my website! Feel free
+            to ask about my projects, the tools I use, or how I’m developing my
+            skills as a Virtual Assistant and IT student. How can I help you
+            today?
+          </div>
+        </div>
+
+        <form
+          id="chat-form"
+          class="p-3 bg-white dark:bg-gray-900 border-t border-gray-200 flex gap-2"
+        >
+          <input
+            type="hidden"
+            name="_token"
+            value="St6CYxPugL6CNjERtCFlaD31lsrkcrMRaJGIlxQM"
+            autocomplete="off"
+          />
+          <input
+            type="text"
+            id="message"
+            autocomplete="off"
+            class="flex-1 bg-gray-50 dark:bg-gray-800 border border-gray-200 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 text-gray-900 dark:text-gray-100 rounded-xl px-4 py-2 text-sm placeholder-gray-500 dark:placeholder-gray-400"
+            placeholder="Type a message..."
+          />
+          <button
+            type="submit"
+            class="bg-black dark:bg-white text-white dark:text-black w-10 h-10 rounded-xl flex items-center justify-center transition hover:opacity-90"
+          >
+            <i class="fas fa-paper-plane text-sm"></i>
+          </button>
+        </form>
+      </div>
+
+      <button
+        id="toggle-chat"
+        class="bg-black text-white hover-lift rounded-full shadow-lg flex items-center gap-3 px-6 py-3.5 transition-all duration-300 transform active:scale-95"
+      >
+        <i class="fas fa-comment-dots text-lg"></i>
+        <span class="font-semibold text-sm">Chat with Renz</span>
+      </button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleBtn = document.getElementById("toggle-chat");
+        const closeBtn = document.getElementById("close-chat");
+        const chatWindow = document.getElementById("chat-window");
+        const chatForm = document.getElementById("chat-form");
+        const chatBox = document.getElementById("chat-box");
+        const messageInput = document.getElementById("message");
+
+        // Toggle visibility
+        toggleBtn.addEventListener("click", () => {
+          chatWindow.classList.remove("hidden");
+          messageInput.focus();
+        });
+
+        closeBtn.addEventListener("click", () =>
+          chatWindow.classList.add("hidden"),
+        );
+
+        // Background Check for Manual Telegram Replies
+        function startPollingForRen(chatId) {
+          const interval = setInterval(async () => {
+            try {
+              const response = await fetch(`/chat/status/${chatId}`);
+              const data = await response.json();
+
+              if (data.is_replied && data.admin_reply) {
+                clearInterval(interval);
+                appendManualReply(data.admin_reply);
+
+                const audio = new Audio(
+                  "https://assets.mixkit.co/active_storage/sfx/2358/2358-preview.mp3",
+                );
+                audio.volume = 0.2;
+                audio.play();
+              }
+            } catch (e) {
+              console.error("Polling failed", e);
+            }
+          }, 5000);
+        }
+
+        // Add personal Telegram message to the UI
+        function appendManualReply(text) {
+          const replyId = "ren-reply-" + Date.now();
+          chatBox.innerHTML += `
+                <div id="${replyId}" class="self-start bg-blue-50 dark:bg-blue-900/20 text-gray-900 dark:text-blue-100 p-3 rounded-2xl rounded-tl-none border-l-4 border-blue-600 shadow-sm max-w-[85%] transition-all duration-500 transform translate-x-1">
+                    <div class="flex items-center gap-1.5 mb-1">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        <div class="text-[9px] uppercase font-bold tracking-widest text-blue-600 dark:text-blue-400">Ren (Direct)</div>
+                    </div>
+                    <div class="text-sm leading-relaxed">${text}</div>
+                </div>`;
+
+          chatBox.scrollTop = chatBox.scrollHeight;
+
+          const replyElement = document.getElementById(replyId);
+          if (replyElement) {
+            replyElement.style.animation = "pulse 0.5s ease-in-out";
+          }
+        }
+
+        // Handle Submission
+        chatForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const userMsg = messageInput.value.trim();
+          if (!userMsg) return;
+
+          // 1. Append User Message
+          chatBox.innerHTML += `
+                <div class="self-end bg-black text-white p-3 rounded-2xl rounded-tr-none text-sm max-w-[85%] shadow-md">
+                    ${userMsg}
+                </div>`;
+
+          messageInput.value = "";
+          chatBox.scrollTop = chatBox.scrollHeight;
+
+          // 2. Prepare AI Bubble (Thinking State)
+          const aiBubbleId = "ai-" + Date.now();
+          chatBox.innerHTML += `
+                <div id="${aiBubbleId}" class="self-start bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-3 rounded-2xl rounded-tl-none border border-gray-200 text-sm shadow-sm max-w-[85%]">
+                    <span class="animate-pulse text-gray-400">Typing...</span>
+                </div>`;
+          chatBox.scrollTop = chatBox.scrollHeight;
+          const aiBubble = document.getElementById(aiBubbleId);
+
+          try {
+            const response = await fetch(
+              "https://renlenon.kodecraze.com/chat/send",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "X-CSRF-TOKEN": "St6CYxPugL6CNjERtCFlaD31lsrkcrMRaJGIlxQM",
+                },
+                body: JSON.stringify({ message: userMsg }),
+              },
+            );
+
+            // Check for Blocked IP status (403 Forbidden)
+            if (response.status === 403) {
+              aiBubble.innerHTML = `<span class="text-red-500 font-bold italic text-xs">🚫 You have been restricted from using the chat.</span>`;
+              return;
+            }
+
+            if (!response.ok) throw new Error("Network error");
+
+            // START POLLING FOR MANUAL REPLY
+            const chatId = response.headers.get("X-Chat-ID");
+            if (chatId) {
+              startPollingForRen(chatId);
+            }
+
+            // 3. Handle Streaming Response
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            aiBubble.innerHTML = "";
+
+            while (true) {
+              const { value, done } = await reader.read();
+              if (done) break;
+
+              const chunk = decoder.decode(value, { stream: true });
+              aiBubble.innerText += chunk;
+              chatBox.scrollTop = chatBox.scrollHeight;
+            }
+          } catch (error) {
+            console.error("Chat Error:", error);
+            aiBubble.innerHTML = `<span class="text-red-500 italic text-xs">Renz is at the gym! Please try again later.</span>`;
+          }
+        });
+      });
+    </script>
+    <div class="flex-grow w-full">
+      <header class="bg-gray-50 dark:bg-[#111]">
+        <div class="max-w-5xl mx-auto px-4 md:px-6 py-8">
+          <div
+            class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 text-center md:text-left"
+          >
+            <div
+              class="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-lg overflow-hidden flex-shrink-0 group cursor-pointer shadow-sm"
+            >
+              <img
+                src="assets/profile/renz-portfolio.jpg"
+                alt="Renz Timothy Gallenero"
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 z-10 @media(hover:hover){ group-hover:opacity-0 }"
+              />
+
+              <img
+                src="assets/profile/renz-portfolio-mahoraga.png"
+                alt="Renz Timothy Gallenero Hover"
+                class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 @media(hover:hover){ group-hover:opacity-100 }"
+              />
+            </div>
+
+            <div class="flex-1 min-w-0 w-full">
+              <div
+                class="flex items-center justify-center md:justify-between mb-1"
+              >
+                <div
+                  class="flex items-center gap-2 flex-wrap justify-center md:justify-start"
+                >
+                  <h1
+                    class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white leading-tight"
+                  >
+                    Renz Timothy Gallenero
+                  </h1>
+                  <i
+                    class="fa-solid fa-circle-check text-blue-500 dark:text-blue-400 text-base md:text-lg"
+                  ></i>
+                </div>
+
+                <button
+                  id="darkModeToggle"
+                  title="Switch Theme"
+                  class="absolute top-4 right-4 md:relative md:top-0 md:right-0 w-10 h-10 flex items-center justify-center flex-shrink-0 rounded-lg border border-gray-300 transition-colors duration-200 hover:bg-gray-100/50 dark:hover:bg-gray-200"
+                >
+                  <i
+                    class="far fa-moon text-gray-700 dark:text-gray-300 dark-icon hidden"
+                  ></i>
+                  <i
+                    class="far fa-sun text-gray-700 dark:text-gray-300 light-icon"
+                  ></i>
+                </button>
+              </div>
+
+              <div
+                class="flex items-center justify-center md:justify-start gap-2 text-gray-600 dark:text-gray-400 mb-1"
+              >
+                <i class="fas fa-location-dot text-[10px]"></i>
+                <span class="text-[10px] md:text-xs"
+                  >Surigao City, Surigao Del Norte, Philippines</span
+                >
+              </div>
+
+              <p
+                class="text-sm md:text-base text-gray-700 dark:text-gray-300 mt-2 mb-4 font-medium leading-tight"
+              >
+                Virtual Assistant
+              </p>
+
+              <div
+                class="flex flex-col sm:flex-row md:flex-wrap gap-2.5 justify-center md:justify-start"
+              >
+                <a
+                  href=""
+                  target="_blank"
+                  class="hover-lift bg-black text-white px-5 py-2.5 md:py-2 rounded-lg text-sm font-medium transition flex items-center justify-center gap-2 shadow-sm"
+                >
+                  <i class="fas fa-calendar-alt text-xs"></i>
+                  <span>Schedule a Call</span>
+                </a>
+
+                <a
+                  href="mailto:renztimothygallenero@gmail.com"
+                  class="hover-lift bg-white dark:bg-transparent border border-gray-200 dark:border-gray-200 text-gray-700 dark:text-white px-5 py-2.5 md:py-2 rounded-lg text-sm font-medium transition flex items-center justify-center gap-2 shadow-sm"
+                >
+                  <i class="fas fa-envelope text-xs"></i>
+                  <span>Send Email</span>
+                </a>
+
+                <a
+                  href=""
+                  target="_blank"
+                  class="hover-lift bg-white dark:bg-transparent border border-gray-200 dark:border-gray-200 text-gray-700 dark:text-white px-5 py-2.5 md:py-2 rounded-lg text-sm font-medium transition flex items-center justify-center md:justify-between gap-3 shadow-sm"
+                >
+                  <div class="flex items-center gap-2">
+                    <i class="fas fa-users text-xs"></i>
+                    <span>Join My Community</span>
+                  </div>
+                  <i
+                    class="fas fa-chevron-right text-[10px] opacity-60 hidden md:block"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div
+          class="max-w-5xl mx-auto px-3 sm:px-4 py-3 sm:py-4 space-y-3 sm:space-y-4"
+        >
+          <!-- MAIN TWO-COLUMN GRID -->
+          <div class="flex flex-col lg:grid lg:grid-cols-5 gap-3 sm:gap-4">
+            <!-- LEFT COLUMN (col-span-2)       -->
+            <div class="contents lg:flex lg:flex-col lg:gap-4 lg:col-span-2">
+              <!-- About Me | mobile order-1 -->
+              <section
+                class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 fade-in hover-lift hover:shadow-xl order-1 lg:order-none"
+              >
+                <div class="flex items-center gap-2 mb-4">
+                  <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                    About Me
+                  </h2>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                  I’m an IT student at Northeastern Mindanao Colleges with a
+                  strong foundation in Information Technology. I’ve learned that
+                  whether you’re managing data, supporting clients, or
+                  streamlining workflows, a solid system and attention to detail
+                  are everything. I apply technical logic and organization to
+                  help businesses stay efficient, reliable, and well-supported
+                  in the digital space.
+                </p>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Currently, I’m developing my skills as a Virtual Assistant,
+                  with experience in administrative support, digital tools,
+                  web-based platforms, and online research. I focus on
+                  continuous learning and delivering support that isn’t just
+                  responsive, but dependable and built to help businesses run
+                  smoothly.
+                </p>
+              </section>
+
+              <!-- Education | mobile order-2 -->
+              <section
+                class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 fade-in hover-lift hover:shadow-xl order-2 lg:order-none"
+              >
+                <div class="flex items-center gap-2 mb-4">
+                  <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                    Education
+                  </h2>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900 text-sm sm:text-base">
+                    BS Information Technology
+                  </p>
+                  <p class="text-xs sm:text-sm text-gray-600 mt-0.5">
+                    Northeastern Mindanao Colleges
+                  </p>
+                  <p class="text-xs text-gray-500 mt-1">2026 - 2027</p>
+                </div>
+              </section>
+
+              <!-- Certifications | mobile order-6 -->
+              <section
+                class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 fade-in hover-lift hover:shadow-xl order-6 lg:order-none"
+              >
+                <div class="flex justify-between items-center mb-6">
+                  <div class="flex items-center gap-2">
+                    <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                      Certifications
+                    </h2>
+                  </div>
+                  <a
+                    href=""
+                    class="text-sm text-gray-500 hover:text-black transition flex items-center gap-1 flex-shrink-0"
+                  >
+                    View All <i class="fas fa-chevron-right text-[10px]"></i>
+                  </a>
+                </div>
+                <div class="space-y-4">
+                  <div
+                    class="cursor-pointer group p-2 rounded-lg bg-gray-100 hover:bg-slate-200 transition-colors duration-200 hover:-translate-y-1"
+                    onclick="openCertModal('')"
+                  >
+                    <p
+                      class="font-semibold text-gray-900 text-sm text-left group-hover:text-blue-600 transition-colors"
+                    >
+                      Virtual Assistant Foundations
+                    </p>
+                    <p class="text-xs text-gray-500 mt-1 text-left">
+                      Digital Skills Training Institute • 2024
+                    </p>
+                  </div>
+                  <div
+                    class="cursor-pointer group p-2 rounded-lg bg-gray-100 hover:bg-slate-200 transition-colors duration-200 hover:-translate-y-1"
+                    onclick="openCertModal('')"
+                  >
+                    <p
+                      class="font-semibold text-gray-900 text-sm text-left group-hover:text-blue-600 transition-colors"
+                    >
+                      Administrative & Office Productivity
+                    </p>
+                    <p class="text-xs text-gray-500 mt-1 text-left">
+                      Global Office Skills Academy • 2025
+                    </p>
+                  </div>
+                  <div
+                    class="cursor-pointer group p-2 rounded-lg bg-gray-100 hover:bg-slate-200 transition-colors duration-200 hover:-translate-y-1"
+                    onclick="openCertModal('')"
+                  >
+                    <p
+                      class="font-semibold text-gray-900 text-sm text-left group-hover:text-blue-600 transition-colors"
+                    >
+                      Google Workspace Proficiency
+                    </p>
+                    <p class="text-xs text-gray-500 mt-1 text-left">
+                      Cloud Productivity Learning Center • 2025
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Tech Stack | mobile order-4 -->
+              <section
+                class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 fade-in hover-lift hover:shadow-xl order-4 lg:order-none"
+              >
+                <div class="flex justify-between items-center mb-6">
+                  <div class="flex items-center gap-2">
+                    <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                      Tech Stack
+                    </h2>
+                  </div>
+                  <a
+                    href=""
+                    class="text-sm text-gray-500 hover:text-black transition flex items-center gap-1 flex-shrink-0"
+                  >
+                    View All <i class="fas fa-chevron-right text-[10px]"></i>
+                  </a>
+                </div>
+                <div class="space-y-6">
+                  <div>
+                    <h3 class="text-base font-bold text-gray-900 mb-3">
+                      Frontend
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >HTML</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >CSS</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >JavaScript</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >Blade</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >Tailwind CSS</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >Vite</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >React</span
+                      >
+                    </div>
+                  </div>
+                  <div>
+                    <h3 class="text-base font-bold text-gray-900 mb-3">
+                      Backend & Database
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >PHP</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >Laravel</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >Python</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >MySQL</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >PostgreSQL</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >Supabase</span
+                      >
+                    </div>
+                  </div>
+                  <div>
+                    <h3 class="text-base font-bold text-gray-900 mb-3">
+                      Tools & Specialized
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >Git & GitHub</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >WordPress</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >SEO Optimization</span
+                      >
+                      <span
+                        class="border border-gray-200 text-gray-700 text-sm px-3 py-1 rounded-lg"
+                        >Google Analytics</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Hobbies | mobile order-8 -->
+              <section
+                class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-5 fade-in hover-lift hover:shadow-xl order-8 lg:order-none"
+              >
+                <div class="flex items-center gap-2 mb-5">
+                  <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                    Beyond the Screen
+                  </h2>
+                </div>
+                <p
+                  class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4"
+                >
+                  When I step away from my studies in Information Technology and
+                  virtual assistance work, I stay active through badminton,
+                  table tennis, jogging, and gym training. These activities help
+                  me maintain balance, discipline, and focus while keeping both
+                  my mind and body energized. Whether I’m rallying on the court,
+                  going for a run, or pushing through a workout, I use these
+                  moments to recharge so I can return to my technical work with
+                  renewed clarity and motivation.
+                </p>
+                <div class="overflow-hidden w-full py-2">
+                  <div class="image-track flex flex-nowrap gap-2">
+                    <img
+                      src="assets/BeyondtheScreen/beyond_1.jpg"
+                      alt=""
+                      class="w-36 h-24 object-cover rounded-md flex-shrink-0 bg-gray-300"
+                    />
+                    <img
+                      src="assets/BeyondtheScreen/beyond_2.jpg"
+                      alt=""
+                      class="w-36 h-24 object-cover rounded-md flex-shrink-0 bg-gray-300"
+                    />
+                    <img
+                      src="assets/BeyondtheScreen/beyond_3.jpg"
+                      alt=""
+                      class="w-36 h-24 object-cover rounded-md flex-shrink-0 bg-gray-300"
+                    />
+                    <img
+                      src="assets/BeyondtheScreen/beyond_4.jpg"
+                      alt=""
+                      class="w-36 h-24 object-cover rounded-md flex-shrink-0 bg-gray-300"
+                    />
+                    <!-- Duplicate for infinite scroll -->
+                    <img
+                      src="assets/BeyondtheScreen/beyond_5.jpg"
+                      alt=""
+                      class="w-36 h-24 object-cover rounded-md flex-shrink-0 bg-gray-300"
+                    />
+                    <img
+                      src="assets/BeyondtheScreen/beyond_1.jpg"
+                      alt=""
+                      class="w-36 h-24 object-cover rounded-md flex-shrink-0 bg-gray-300"
+                    />
+                    <img
+                      src="assets/BeyondtheScreen/beyond_2.jpg"
+                      alt=""
+                      class="w-36 h-24 object-cover rounded-md flex-shrink-0 bg-gray-300"
+                    />
+                    <img
+                      src="assets/BeyondtheScreen/beyond_3.jpg"
+                      alt=""
+                      class="w-36 h-24 object-cover rounded-md flex-shrink-0 bg-gray-300"
+                    />
+                  </div>
+                </div>
+              </section>
+            </div>
+            <!-- END LEFT COLUMN -->
+
+            <!-- RIGHT COLUMN (col-span-3)      -->
+            <div class="contents lg:flex lg:flex-col lg:gap-4 lg:col-span-3">
+              <!-- Experience | mobile order-3 -->
+              <section
+                class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 fade-in hover-lift hover:shadow-xl order-3 lg:order-none"
+              >
+                <div class="flex items-center gap-2 mb-6">
+                  <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                    Experience
+                  </h2>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-start justify-between gap-4 py-2">
+                    <div class="flex items-start gap-3 flex-1">
+                      <div
+                        class="experience-dot current w-2 h-2 rounded-full mt-2 flex-shrink-0"
+                      ></div>
+                      <div>
+                        <h3
+                          class="font-semibold text-gray-900 text-sm sm:text-base"
+                        >
+                          Virtual Assistant / Customer Support Representative
+                        </h3>
+                        <p class="text-sm text-gray-600 mt-0.5">
+                          ABC Solutions Services
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="text-xs sm:text-sm text-gray-500 font-medium whitespace-nowrap"
+                      >2027 - Present</span
+                    >
+                  </div>
+                  <div class="flex items-start justify-between gap-4 py-2">
+                    <div class="flex items-start gap-3 flex-1">
+                      <div
+                        class="experience-dot w-2 h-2 rounded-full mt-2 flex-shrink-0"
+                      ></div>
+                      <div>
+                        <h3
+                          class="font-semibold text-gray-900 text-sm sm:text-base"
+                        >
+                          Virtual Assistant Intern
+                        </h3>
+                        <p class="text-sm text-gray-600 mt-0.5">
+                          BrightLine Online Services
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="text-xs sm:text-sm text-gray-500 font-medium whitespace-nowrap"
+                      >2026-2027</span
+                    >
+                  </div>
+                  <div class="flex items-start justify-between gap-4 py-2">
+                    <div class="flex items-start gap-3 flex-1">
+                      <div
+                        class="experience-dot w-2 h-2 rounded-full mt-2 flex-shrink-0"
+                      ></div>
+                      <div>
+                        <h3
+                          class="font-semibold text-gray-900 text-sm sm:text-base"
+                        >
+                          Customer Support Associate
+                        </h3>
+                        <p class="text-sm text-gray-600 mt-0.5">
+                          Prime Digital Assistance
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="text-xs sm:text-sm text-gray-500 font-medium whitespace-nowrap"
+                      >2025-2026</span
+                    >
+                  </div>
+                  <div class="flex items-start justify-between gap-4 py-2">
+                    <div class="flex items-start gap-3 flex-1">
+                      <div
+                        class="experience-dot w-2 h-2 rounded-full mt-2 flex-shrink-0"
+                      ></div>
+                      <div>
+                        <h3
+                          class="font-semibold text-gray-900 text-sm sm:text-base"
+                        >
+                          Administrative Virtual Assistant
+                        </h3>
+                        <p class="text-sm text-gray-600 mt-0.5">Freelance</p>
+                      </div>
+                    </div>
+                    <span
+                      class="text-xs sm:text-sm text-gray-500 font-medium whitespace-nowrap"
+                      >2024-2025</span
+                    >
+                  </div>
+                </div>
+              </section>
+
+              <!-- Projects | mobile order-5 -->
+              <section
+                class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 md:p-7 fade-in hover-lift hover:shadow-xl order-5 lg:order-none"
+              >
+                <div class="flex justify-between items-center gap-2 mb-6">
+                  <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                    Projects
+                  </h2>
+                  <a
+                    href=""
+                    class="text-sm text-gray-500 hover:text-black transition flex items-center gap-1 flex-shrink-0"
+                  >
+                    View All <i class="fas fa-chevron-right text-[10px]"></i>
+                  </a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div
+                    class="border border-gray-100 rounded-lg overflow-hidden hover-lift hover:shadow-lg transition"
+                  >
+                    <img
+                      src="assets/projectsImage/project_1.jpg"
+                      alt="TaskFlow VA System"
+                      class="w-full h-28 sm:h-32 object-cover bg-gray-100"
+                    />
+                    <div class="p-3 sm:p-4">
+                      <h3 class="font-semibold text-gray-900 text-base mb-1">
+                        TaskFlow VA System
+                      </h3>
+                      <p class="text-xs text-gray-600 mb-3">
+                        A web-based task management tool for tracking daily
+                        tasks, deadlines, and priorities for virtual assistant
+                        workflows.
+                      </p>
+                      <a href="" class="domain-link-button">View Case Study</a>
+                    </div>
+                  </div>
+                  <div
+                    class="border border-gray-100 rounded-lg overflow-hidden hover-lift hover:shadow-lg transition"
+                  >
+                    <img
+                      src="assets/projectsImage/project_2.jpg"
+                      alt="InboxPilot Email Organizer"
+                      class="w-full h-28 sm:h-32 object-cover bg-gray-100"
+                    />
+                    <div class="p-3 sm:p-4">
+                      <h3 class="font-semibold text-gray-900 text-base mb-1">
+                        InboxPilot Email Organizer
+                      </h3>
+                      <p class="text-xs text-gray-600 mb-3">
+                        An email sorting and labeling system that helps
+                        categorize client emails, prioritize urgent messages,
+                        and reduce inbox clutter.
+                      </p>
+                      <a href="" class="domain-link-button">mrbeans.online</a>
+                    </div>
+                  </div>
+                  <div
+                    class="border border-gray-100 rounded-lg overflow-hidden hover-lift hover:shadow-lg transition"
+                  >
+                    <img
+                      src="assets/projectsImage/project_3.jpg"
+                      alt="ClientTrack CRM Lite"
+                      class="w-full h-28 sm:h-32 object-cover bg-gray-100"
+                    />
+                    <div class="p-3 sm:p-4">
+                      <h3 class="font-semibold text-gray-900 text-base mb-1">
+                        ClientTrack CRM Lite
+                      </h3>
+                      <p class="text-xs text-gray-600 mb-3">
+                        A simple client management system for storing client
+                        details, tracking interactions, and organizing project
+                        status updates.
+                      </p>
+                      <a href="" class="domain-link-button"></a>
+                    </div>
+                  </div>
+                  <div
+                    class="border border-gray-100 rounded-lg overflow-hidden hover-lift hover:shadow-lg transition"
+                  >
+                    <img
+                      src="assets/projectsImage/project_4.jpg"
+                      alt="DataEase Entry & Validation Tool"
+                      class="w-full h-28 sm:h-32 object-cover bg-gray-100"
+                    />
+                    <div class="p-3 sm:p-4">
+                      <h3 class="font-semibold text-gray-900 text-base mb-1">
+                        DataEase Entry & Validation Tool
+                      </h3>
+                      <p class="text-xs text-gray-600 mb-3">
+                        A structured data entry system with validation features
+                        to minimize errors and improve accuracy in
+                        administrative encoding tasks.
+                      </p>
+                      <a href="" class="domain-link-button"></a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Recommendations | mobile order-7 -->
+              <section
+                class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 fade-in hover-lift hover:shadow-xl order-7 lg:order-none lg:flex-1 lg:flex lg:flex-col"
+              >
+                <div class="flex items-center gap-2 mb-4">
+                  <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                    Recommendations
+                  </h2>
+                </div>
+                <div
+                  id="recommendation-carousel"
+                  class="relative flex flex-col"
+                >
+                  <div class="recommendation-wrapper">
+                    <div
+                      class="rec-item active bg-gray-50 rounded-lg p-4 border border-gray-100 hover:bg-gray-100 transition-all hover:-translate-y-1 duration-300"
+                    >
+                      <p class="text-sm text-gray-700 italic mb-1">
+                        "Been working with him for a year and he has
+                        consistently delivered reliable, organized, and
+                        efficient virtual assistance that keeps operations
+                        running smoothly"
+                      </p>
+                      <p class="text-xs font-bold text-gray-900">
+                        — Laurence I.
+                      </p>
+                    </div>
+                    <div
+                      class="rec-item bg-gray-50 rounded-lg p-4 border border-gray-100 hover:bg-gray-100 transition-all hover:-translate-y-1 duration-300"
+                    >
+                      <p class="text-sm text-gray-700 italic mb-1">
+                        "He is highly dependable and detail-oriented, always
+                        ensuring tasks are completed accurately and on time
+                        while making daily workflows much easier to manage."
+                      </p>
+                      <p class="text-xs font-bold text-gray-900">— Roy M.</p>
+                    </div>
+                  </div>
+                  <div class="mt-6 flex justify-center items-center">
+                    <div id="rec-dots" class="flex gap-1.5"></div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Gallery | mobile order-9 -->
+              <section
+                class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-5 fade-in hover-lift hover:shadow-xl order-9 lg:order-none"
+              >
+                <div class="flex items-center gap-2 mb-5">
+                  <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                    Gallery
+                  </h2>
+                </div>
+                <div class="relative">
+                  <button
+                    onclick="scrollGallery(-1)"
+                    aria-label="Previous"
+                    class="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-600"
+                  >
+                    <i
+                      class="fas fa-angle-left text-gray-700 dark:text-gray-200 text-lg"
+                    ></i>
+                  </button>
+                  <div
+                    id="galleryContainer"
+                    class="overflow-x-auto scroll-smooth scrollbar-hide touch-pan-x overscroll-contain"
+                  >
+                    <div class="flex gap-2 sm:gap-3 md:gap-4 px-2 py-2">
+                      <div
+                        class="shrink-0 w-[47%] sm:w-44 md:w-56 h-32 sm:h-36 md:h-48 bg-gray-200 rounded-lg overflow-hidden hover:scale-105 hover:shadow-xl transition-all cursor-pointer"
+                        onclick="openGalleryModal([])"
+                      >
+                        <img
+                          src="assets/gallery/gallery1.jpg"
+                          alt="Gallery image 1"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div
+                        class="shrink-0 w-[47%] sm:w-44 md:w-56 h-32 sm:h-36 md:h-48 bg-gray-200 rounded-lg overflow-hidden hover:scale-105 hover:shadow-xl transition-all cursor-pointer"
+                        onclick="openGalleryModal([])"
+                      >
+                        <img
+                          src="assets/gallery/gallery2.jpg"
+                          alt="Gallery image 2"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div
+                        class="shrink-0 w-[47%] sm:w-44 md:w-56 h-32 sm:h-36 md:h-48 bg-gray-200 rounded-lg overflow-hidden hover:scale-105 hover:shadow-xl transition-all cursor-pointer"
+                        onclick="openGalleryModal([])"
+                      >
+                        <img
+                          src="assets/gallery/gallery3.jpg"
+                          alt="Gallery image 3"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div
+                        class="shrink-0 w-[47%] sm:w-44 md:w-56 h-32 sm:h-36 md:h-48 bg-gray-200 rounded-lg overflow-hidden hover:scale-105 hover:shadow-xl transition-all cursor-pointer"
+                        onclick="openGalleryModal([])"
+                      >
+                        <img
+                          src="assets/gallery/gallery4.jpg"
+                          alt="Gallery image 4"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div
+                        class="shrink-0 w-[47%] sm:w-44 md:w-56 h-32 sm:h-36 md:h-48 bg-gray-200 rounded-lg overflow-hidden hover:scale-105 hover:shadow-xl transition-all cursor-pointer"
+                        onclick="openGalleryModal([])"
+                      >
+                        <img
+                          src="assets/gallery/gallery5.jpg"
+                          alt="Gallery image 5"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div
+                        class="shrink-0 w-[47%] sm:w-44 md:w-56 h-32 sm:h-36 md:h-48 bg-gray-200 rounded-lg overflow-hidden hover:scale-105 hover:shadow-xl transition-all cursor-pointer"
+                        onclick="openGalleryModal([])"
+                      >
+                        <img
+                          src="assets/gallery/gallery6.jpg"
+                          alt="Gallery image 6"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div
+                        class="shrink-0 w-[47%] sm:w-44 md:w-56 h-32 sm:h-36 md:h-48 bg-gray-200 rounded-lg overflow-hidden hover:scale-105 hover:shadow-xl transition-all cursor-pointer"
+                        onclick="openGalleryModal([])"
+                      >
+                        <img
+                          src="assets/gallery/gallery7.jpg"
+                          alt="Gallery image 7"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    onclick="scrollGallery(1)"
+                    aria-label="Next"
+                    class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-600"
+                  >
+                    <i
+                      class="fas fa-angle-right text-gray-700 dark:text-gray-200 text-lg"
+                    ></i>
+                  </button>
+                </div>
+              </section>
+            </div>
+            <!-- END RIGHT COLUMN -->
+          </div>
+          <!-- END MAIN GRID -->
+
+          <!-- CONTACT — full width -->
+          <section
+            class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 fade-in hover-lift hover:shadow-xl w-full"
+          >
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-start"
+            >
+              <div>
+                <h3
+                  class="text-lg sm:text-xl md:text-2xl font-extrabold text-gray-900 leading-tight mb-4"
+                >
+                  Let's work <span class="text-gray-400">together.</span>
+                </h3>
+                <p
+                  class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6"
+                >
+                  Available for UI/UX and WordPress freelance projects, with
+                  added support in SEO, Google Search Console (GSC), Google My
+                  Business (GMB), and email campaigns.
+                </p>
+                <div>
+                  <p
+                    class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3"
+                  >
+                    Follow Me
+                  </p>
+                  <div class="flex flex-wrap gap-3">
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="w-9 h-9 rounded-lg bg-gray-50 flex items-center justify-center text-gray-500 hover:text-blue-600 hover:bg-blue-50 hover:-translate-y-1 transition-all duration-300 border border-gray-200 shadow-sm"
+                    >
+                      <i class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="w-9 h-9 rounded-lg bg-gray-50 flex items-center justify-center text-gray-500 hover:text-black hover:bg-gray-100 hover:-translate-y-1 transition-all duration-300 border border-gray-200 shadow-sm"
+                    >
+                      <i class="fab fa-github text-sm"></i>
+                    </a>
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="w-9 h-9 rounded-lg bg-gray-50 flex items-center justify-center text-gray-500 hover:text-pink-500 hover:bg-pink-50 hover:-translate-y-1 transition-all duration-300 border border-gray-200 shadow-sm"
+                    >
+                      <i class="fab fa-tiktok text-sm"></i>
+                    </a>
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="w-9 h-9 rounded-lg bg-gray-50 flex items-center justify-center text-gray-500 hover:text-green-600 hover:bg-green-50 hover:-translate-y-1 transition-all duration-300 border border-gray-200 shadow-sm"
+                    >
+                      <i class="fas fa-graduation-cap text-sm"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-2 sm:space-y-2.5">
+                <p
+                  class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2"
+                >
+                  Get in Touch
+                </p>
+                <a
+                  href="mailto:renztimothygallenero@gmail.com"
+                  class="flex items-center p-2.5 sm:p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-all group hover:-translate-y-1 duration-300"
+                >
+                  <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+                    <div
+                      class="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 flex-shrink-0"
+                    >
+                      <i class="fas fa-envelope text-sm"></i>
+                    </div>
+                    <div class="min-w-0">
+                      <span
+                        class="text-[10px] font-bold text-gray-400 uppercase tracking-widest block"
+                        >Email</span
+                      >
+                      <p class="text-sm text-gray-900 font-normal truncate">
+                        renztimothygallenero@gmail.com
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center p-2.5 sm:p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-all group hover:-translate-y-1 duration-300"
+                >
+                  <div class="flex items-center gap-2 sm:gap-3">
+                    <div
+                      class="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 flex-shrink-0"
+                    >
+                      <i class="fas fa-calendar-alt text-sm"></i>
+                    </div>
+                    <div>
+                      <span
+                        class="text-[10px] font-bold text-gray-400 uppercase tracking-widest block"
+                        >Let's Talk</span
+                      >
+                      <p class="text-sm text-gray-900 font-normal">
+                        Schedule a Call
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href=""
+                  class="flex items-center p-2.5 sm:p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-all group hover:-translate-y-1 duration-300"
+                >
+                  <div class="flex items-center gap-2 sm:gap-3">
+                    <div
+                      class="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 flex-shrink-0"
+                    >
+                      <i class="fas fa-users text-sm"></i>
+                    </div>
+                    <div>
+                      <span
+                        class="text-[10px] font-bold text-gray-400 uppercase tracking-widest block"
+                        >Community</span
+                      >
+                      <p class="text-sm text-gray-900 font-normal">
+                        Join Discussion
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <footer class="bg-white mt-6 transition-colors duration-300 relative">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent"
+      ></div>
+
+      <div class="max-w-4xl mx-auto px-6 py-5">
+        <div
+          class="flex flex-col items-center justify-center gap-1 text-center"
+        >
+          <p class="text-sm text-gray-900 dark:text-white font-normal">
+            © 2026 Renz Timothy Gallenero. All Rights Reserved.
+          </p>
+          <p class="text-sm text-gray-900 dark:text-white font-normal">
+            Developed in Surigao City, Surigao Del Norte, Philippines
+          </p>
+        </div>
+      </div>
+    </footer>
+    <div
+      id="certModal"
+      class="fixed inset-0 z-[150] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+      onclick="closeCertModal()"
+    >
+      <div class="relative max-w-4xl w-full" onclick="event.stopPropagation()">
+        <button
+          class="absolute -top-12 right-0 text-white text-xl font-bold hover:text-gray-300"
+          onclick="closeCertModal()"
+        >
+          ✕
+        </button>
+        <img
+          id="modalImage"
+          src=""
+          alt="Certification"
+          class="w-full h-auto rounded-xl shadow-2xl border border-white/10"
+        />
+      </div>
+    </div>
+
+    <!-- Gallery Lightbox Modal -->
+    <div
+      id="galleryModal"
+      class="fixed inset-0 z-[150] hidden items-center justify-center bg-black/90 backdrop-blur-sm"
+      onclick="closeGalleryModal()"
+    >
+      <div
+        class="relative max-w-6xl w-full h-full flex items-center justify-center p-4"
+      >
+        <button
+          class="absolute top-4 right-4 text-white hover:text-gray-300 transition text-lg flex items-center gap-2"
+          onclick="closeGalleryModal()"
+        >
+          <span class="text-2xl font-bold">✕</span>
+        </button>
+
+        <!-- Previous Button -->
+        <button
+          onclick="
+            previousGalleryImage();
+            event.stopPropagation();
+          "
+          class="absolute left-4 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-600"
+        >
+          <i
+            class="fas fa-angle-left text-gray-700 dark:text-gray-200 text-xl"
+          ></i>
+        </button>
+
+        <!-- Image -->
+        <div
+          class="max-w-5xl max-h-[90vh] flex items-center justify-center"
+          onclick="event.stopPropagation()"
+        >
+          <img
+            id="galleryModalImage"
+            src=""
+            alt="Gallery"
+            class="max-w-full max-h-[90vh] w-auto h-auto rounded-lg shadow-2xl"
+          />
+        </div>
+
+        <!-- Next Button -->
+        <button
+          onclick="
+            nextGalleryImage();
+            event.stopPropagation();
+          "
+          class="absolute right-4 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-600"
+        >
+          <i
+            class="fas fa-angle-right text-gray-700 dark:text-gray-200 text-xl"
+          ></i>
+        </button>
+
+        <!-- Image Counter -->
+        <div
+          class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black/50 px-4 py-2 rounded-full"
+          onclick="event.stopPropagation()"
+        >
+          <span id="galleryCounter">1 / 1</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="" defer></script>
+    <script src="" defer></script>
+    <script src="" defer></script>
+
+    <script>
+      window.openCertModal = function (imgSrc) {
+        const modal = document.getElementById("certModal");
+        const modalImg = document.getElementById("modalImage");
+        if (modal && modalImg) {
+          modalImg.src = imgSrc;
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          document.body.style.overflow = "hidden";
+        }
+      };
+
+      window.closeCertModal = function () {
+        const modal = document.getElementById("certModal");
+        if (modal) {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          document.body.style.overflow = "auto";
+        }
+      };
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeCertModal();
+          closeGalleryModal();
+          if (typeof closeEditPostModal === "function") closeEditPostModal();
+          if (typeof closeDeleteConfirmModal === "function")
+            closeDeleteConfirmModal();
+          if (typeof closeCreatePostModal === "function")
+            closeCreatePostModal();
+        }
+
+        // Gallery navigation with arrow keys
+        const galleryModal = document.getElementById("galleryModal");
+        if (galleryModal && !galleryModal.classList.contains("hidden")) {
+          if (e.key === "ArrowLeft") {
+            previousGalleryImage();
+          } else if (e.key === "ArrowRight") {
+            nextGalleryImage();
+          }
+        }
+      });
+
+      // Gallery Modal Functions
+      let currentGalleryIndex = 0;
+      let galleryImages = [];
+
+      window.openGalleryModal = function (imgSrc, images) {
+        galleryImages = images;
+        currentGalleryIndex = images.indexOf(imgSrc);
+        const modal = document.getElementById("galleryModal");
+        const modalImg = document.getElementById("galleryModalImage");
+        const counter = document.getElementById("galleryCounter");
+
+        if (modal && modalImg) {
+          modalImg.src = imgSrc;
+          counter.textContent = `${currentGalleryIndex + 1} / ${galleryImages.length}`;
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          document.body.style.overflow = "hidden";
+        }
+      };
+
+      window.closeGalleryModal = function () {
+        const modal = document.getElementById("galleryModal");
+        if (modal) {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          document.body.style.overflow = "auto";
+        }
+      };
+
+      window.nextGalleryImage = function () {
+        if (galleryImages.length === 0) return;
+        currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+        const modalImg = document.getElementById("galleryModalImage");
+        const counter = document.getElementById("galleryCounter");
+        if (modalImg) {
+          modalImg.src = galleryImages[currentGalleryIndex];
+          counter.textContent = `${currentGalleryIndex + 1} / ${galleryImages.length}`;
+        }
+      };
+
+      window.previousGalleryImage = function () {
+        if (galleryImages.length === 0) return;
+        currentGalleryIndex =
+          (currentGalleryIndex - 1 + galleryImages.length) %
+          galleryImages.length;
+        const modalImg = document.getElementById("galleryModalImage");
+        const counter = document.getElementById("galleryCounter");
+        if (modalImg) {
+          modalImg.src = galleryImages[currentGalleryIndex];
+          counter.textContent = `${currentGalleryIndex + 1} / ${galleryImages.length}`;
+        }
+      };
+    </script>
+
+    <button
+      id="scrollToTop"
+      title="Back to Top"
+      class="fixed bottom-28 right-6 z-[40] hidden w-12 h-12 items-center justify-center shrink-0 rounded-full transition-all duration-300 shadow-lg bg-black text-white hover:bg-zinc-800 hover:scale-110"
+    >
+      <i class="fas fa-chevron-up text-lg"></i>
+    </button>
+
+    <script>
+      const scrollBtn = document.getElementById("scrollToTop");
+
+      window.onscroll = function () {
+        if (window.pageYOffset > 400) {
+          scrollBtn.classList.remove("hidden");
+          scrollBtn.classList.add("flex");
+        } else {
+          scrollBtn.classList.add("hidden");
+          scrollBtn.classList.remove("flex");
+        }
+      };
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
